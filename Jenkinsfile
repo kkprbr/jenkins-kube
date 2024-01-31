@@ -5,7 +5,7 @@
 		   
     		   }	  
           stage('Apply Kubernetes files') {
-		  withKubeconfig([credentialsId: 'kube-creds', serverurl: 'https://192.168.0.4:6443']) {
+		  withKubeConfig([credentialsId: 'kube-creds', serverUrl: 'https://192.168.0.4:6443']) {
 		      sh 'kubectl apply -f deployment.yaml'
 			  sh 'kubectl apply -f service.yaml'
 			   sh '''#!/bin/bash
